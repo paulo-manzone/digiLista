@@ -1,0 +1,58 @@
+<!--
+  Generated template for the AddusuarioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DigiLista</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-card>
+    <ion-card-header> Cadastrar Evento </ion-card-header>
+  
+    <form [formGroup] = "form">
+      <ion-grid>
+        <ion-row justify-content-center align-items-center>
+          <p>Nome:</p>
+        </ion-row>
+        <ion-row>
+          <ion-input type="text" value="" placeholder="..." formControlName="nome"></ion-input>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+            <p>Local:</p>
+        </ion-row>
+        <ion-row>
+            <ion-input type="text" value="" placeholder="..." formControlName="local"></ion-input>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <p>Data:</p>
+        </ion-row>
+        <ion-row>
+          <ion-input type="text" value="" placeholder="..." formControlName="data"></ion-input>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <p>Criador:</p>
+        </ion-row>
+        <ion-row>
+          <ion-input type="text" value="" placeholder="..." formControlName="criador"></ion-input>
+        </ion-row>
+      </ion-grid>
+    </form>
+
+  </ion-card>
+  <button ion-button block color="primary" (click)="onSubmit()" type="submit" [disabled]="!form.valid">Cadastrar</button>
+  <button ion-button block color="secondary">Voltar</button>
+
+
+
+</ion-content>

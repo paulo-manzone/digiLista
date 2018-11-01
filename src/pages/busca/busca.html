@@ -1,0 +1,44 @@
+<!--
+  Generated template for the BuscaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DigiLista</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+      <div class="buscaText">Buscar Evento</div>
+      <ion-searchbar
+      [(ngModel)]="myInput"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </ion-card>
+  <ion-card>
+    <ion-grid>
+      <ion-list>
+        <ion-item-sliding *ngFor = "let evento of eventos | async">
+          <ion-item (click)="abrirEvento($event, item)">
+            <h3>{{evento.nome}}</h3>
+            <hr>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-grid>
+
+  </ion-card>
+  <button ion-button block color="secondary">Voltar</button>
+
+</ion-content>

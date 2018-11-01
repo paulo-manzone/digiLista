@@ -1,0 +1,7 @@
+{
+  "name": "digiLista",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
