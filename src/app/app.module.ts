@@ -1,3 +1,4 @@
+import { CadastroPage } from './../pages/cadastro/cadastro';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -31,7 +32,8 @@ import { AddusuarioPage } from '../pages/addusuario/addusuario';
     InfoEventoPage,
     AdmEventoPage,
     FingerprintPage,
-    AddusuarioPage
+    AddusuarioPage,
+    CadastroPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { AddusuarioPage } from '../pages/addusuario/addusuario';
     InfoEventoPage,
     AdmEventoPage,
     FingerprintPage,
-    AddusuarioPage
+    AddusuarioPage,
+    CadastroPage
   ],
   providers: [
     StatusBar,

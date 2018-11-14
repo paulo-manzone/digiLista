@@ -16,20 +16,39 @@
   
     <ion-card-content>
       <ion-grid>
-        <ion-row justify-content-center align-items-center>
-          Usuário
+ 
+        <ion-row>
+          <ion-col>
+            <form>
+              <ion-list>
+                <ion-item>
+                  <ion-label floating>Usuário</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Senha</ion-label>
+                    <ion-input type="password"></ion-input>
+                  </ion-item>
+              </ion-list>
+            </form>
+          </ion-col>
         </ion-row>
-        <ion-row justify-content-center align-items-center>
-          <ion-input placeholder="..." class="usuarioLogin"></ion-input>
-        </ion-row>
-        <ion-row justify-content-center align-items-center>
-          Senha
-        </ion-row>
-        <ion-row  justify-content-center align-items-center>
-          <ion-input placeholder="..." type="password" class="senhaLogin"></ion-input>
-        </ion-row>
-        <ion-row  justify-content-center align-items-center>
-          <button ion-button secondary menuToggle>Entrar</button>
+        <ion-row justify-content-center>
+          <ion-col col-auto>
+              <button ion-button large>Entrar</button>
+          </ion-col>
+        </ion-row> 
+              
+    
+
+        <ion-row justify-content-around>
+          <ion-col col-auto>
+            <button ion-button clear small>Esqueceu sua senha?</button>
+          </ion-col>
+          <ion-col col-auto>
+            <button ion-button clear small (click)="goToCadastroPage()">Cadastre-se</button>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
