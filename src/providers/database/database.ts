@@ -78,6 +78,13 @@ export class DatabaseProvider {
     })
   }
 
+  updatePresenca(param: any, path: any, nome: any) {
+    this.db.list(path, ref => ref.orderByChild('nome').equalTo(nome)).valueChanges()
+    .subscribe(res => {
+      this.db.list(path).set(res[0]['key'],param);
+    })
+  }
+
   login() {
 
     return this.getAll('/pessoas');

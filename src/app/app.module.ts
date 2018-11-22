@@ -25,6 +25,7 @@ import { UserProvider } from '../providers/user/user';
 import { PrincipalAdmPage } from '../pages/principal-adm/principal-adm';
 import { NovoeventoPage } from '../pages/novoevento/novoevento';
 import { HistoricoPage } from '../pages/historico/historico';
+import { ListaAdmPage } from '../pages/lista-adm/lista-adm';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { HistoricoPage } from '../pages/historico/historico';
     AlterarDadosPage,
     PrincipalAdmPage,
     NovoeventoPage,
-    HistoricoPage
+    HistoricoPage,
+    ListaAdmPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { HistoricoPage } from '../pages/historico/historico';
     AlterarDadosPage,
     PrincipalAdmPage,
     NovoeventoPage,
-    HistoricoPage
+    HistoricoPage,
+    ListaAdmPage,
   ],
   providers: [
     StatusBar,
