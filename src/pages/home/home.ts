@@ -4,6 +4,7 @@ import { DatabaseProvider } from './../../providers/database/database';
 import { CadastroPage } from './../cadastro/cadastro';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PrincipalAdmPage } from '../principal-adm/principal-adm';
 
 @Component({
   selector: 'page-home',
@@ -32,7 +33,14 @@ export class HomePage {
         flag.value = true;
         flag.tipoConta = item['tipoConta'];
         this.user.setUsuario(this.username);
-        this.navCtrl.push(PrincipalPage);
+        if(item['tipoConta'] == 'user'){
+          this.user.setTipo("user");
+          this.navCtrl.push(PrincipalPage);
+        }else{
+          this.user.setTipo("agent");
+          this.navCtrl.push(PrincipalAdmPage);
+        }
+        
       }
     }));
   }

@@ -14,6 +14,10 @@ export class UserProvider {
 
   pathBusca: any;
 
+  eventoBuscado: any;
+
+  tipousuario: any;
+
   constructor() {
     console.log('Hello UserProvider Provider');
   }
@@ -32,6 +36,22 @@ export class UserProvider {
 
   setPath(path: any) {
     this.pathBusca = path;
+  }
+
+  getTipo(){
+    return this.tipousuario;
+  }
+
+  setTipo(tipo: any){
+    this.tipousuario = tipo;
+  }
+
+  getEvento(){
+    return this.eventoBuscado;
+  }
+
+  setEvento(nome: any){
+    this.eventoBuscado = nome;
   }
 
 }

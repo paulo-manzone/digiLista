@@ -29,13 +29,13 @@
   <ion-card>
       <ion-list>
           <ion-item-sliding *ngFor = "let i of elemento | async">
-            <ion-item (click)="abrirEvento($event)">-->
+            <ion-item *ngIf="this.user.getTipo() == 'user' || i.criador == this.user.getUsuario()" (click)="abrirEvento($event)">-->
               <h3>{{i.nome}}</h3>
               <hr>
             </ion-item>
           </ion-item-sliding>
         </ion-list>
   </ion-card>
-  <button ion-button block color="secondary">Voltar</button>
+  <button ion-button block color="secondary"(click)="voltarPagina()">Voltar</button>
 
 </ion-content>

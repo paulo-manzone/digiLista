@@ -27,19 +27,19 @@
           <ion-row>
             <ion-card>
               <ion-card-content>
-                <p>Nome: InterUnesp</p>
-                <p>Local: Araraquara-SP</p>
-                <p>Data: 15/11/2018</p>
-                <p>Criador: Atlética Mané Garrincha</p>
+                <p>Nome: {{nome}}</p>
+                <p>Local: {{local}}</p>
+                <p>Data: {{data}}</p>
+                <p>Criador: {{criador}}</p>
               </ion-card-content>
             </ion-card>
           </ion-row>
           <ion-row justify-content-center align-items-center>
-            <button ion-button block> Cadastrar-se</button>
+            <button ion-button block (click)="cadastrarParticipante()"> Cadastrar-se</button>
           </ion-row>
           <hr>
           <ion-row justify-content-center align-items-center>
-              <button ion-button block color="secondary">Voltar</button>
+              <button ion-button block color="secondary" (click)="this.navCtrl.pop()">Voltar</button>
           </ion-row>
         </ion-grid>
     </ion-card-content>

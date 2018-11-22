@@ -22,6 +22,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { DatabaseProvider } from '../providers/database/database';
 import { AddusuarioPage } from '../pages/addusuario/addusuario';
 import { UserProvider } from '../providers/user/user';
+import { PrincipalAdmPage } from '../pages/principal-adm/principal-adm';
+import { NovoeventoPage } from '../pages/novoevento/novoevento';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { UserProvider } from '../providers/user/user';
     AddusuarioPage,
     CadastroPage,
     AlterarDadosPage,
+    PrincipalAdmPage,
+    NovoeventoPage
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,8 @@ import { UserProvider } from '../providers/user/user';
     AddusuarioPage,
     CadastroPage,
     AlterarDadosPage,
+    PrincipalAdmPage,
+    NovoeventoPage
   ],
   providers: [
     StatusBar,

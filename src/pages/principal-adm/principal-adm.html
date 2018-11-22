@@ -1,0 +1,50 @@
+<!--
+  Generated template for the PrincipalAdmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-title>DigiLista - ADM</ion-title>
+
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card>
+<ion-card-content>
+    <ion-grid justify-content-center align-items-center>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-only class="btnCustom" (click)="goToPageBusca()">
+              <ion-icon name="list-box"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col>
+                  <button ion-button icon-only class="btnCustom" (click)="goToPageCriarEvento()">
+                  <ion-icon name="add-circle"></ion-icon>
+              </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                  <button ion-button icon-only class="btnCustom">
+                    <ion-icon name="help"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col>
+                  <button ion-button icon-only class="btnCustom" (click)="goToPageAlterarDados()">
+                    <ion-icon name="person"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-card-content>
+</ion-card>
+
+
+</ion-content>
+

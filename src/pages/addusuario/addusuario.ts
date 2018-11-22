@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DatabaseProvider } from '../../providers/database/database';
+import { UserProvider } from '../../providers/user/user';
 
 /**
  * Generated class for the AddusuarioPage page.
@@ -19,12 +20,14 @@ export class AddusuarioPage {
   title: String;
   form: FormGroup;
   evento: any;
+  usuario: any = "Indefinido";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private provider: DatabaseProvider,
-    private toast: ToastController) {
+    private toast: ToastController, private alertCtrl: AlertController, public user: UserProvider) {
     this.evento = this.navParams.data.evento || { };
     this.createForm();
     this.setupPageTitle();
+    this.usuario = user.getUsuario()
   }
 
   private setupPageTitle() {
@@ -44,7 +47,18 @@ export class AddusuarioPage {
   onSubmit() {
     if (this.form.valid) {
       this.provider.saveData(this.form.value, '/eventos');
+      let alert = this.alertCtrl.create({
+        title: 'Sucesso!',
+        subTitle: 'Seu evento foi criado!',
+        buttons: ['Ok']
+      });
+      alert.present();
+      this.navCtrl.pop();
     }
+  }
+
+  voltar(){
+    this.navCtrl.pop();
   }
 
 

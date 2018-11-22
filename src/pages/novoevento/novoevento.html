@@ -1,5 +1,5 @@
 <!--
-  Generated template for the AddusuarioPage page.
+  Generated template for the NovoeventoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -44,14 +44,14 @@
           <p>Criador:</p>
         </ion-row>
         <ion-row>
-          <ion-input disabled=true type="text" value="" placeholder="..." formControlName="criador" value="{{this.usuario}}"></ion-input>
+          <ion-input type="text" value="" placeholder="..." formControlName="criador"></ion-input>
         </ion-row>
       </ion-grid>
     </form>
 
   </ion-card>
   <button ion-button block color="primary" (click)="onSubmit()" type="submit" [disabled]="!form.valid">Cadastrar</button>
-  <button ion-button block color="secondary"(click)="voltar()">Voltar</button>
+  <button ion-button block color="secondary">Voltar</button>
 
 
 

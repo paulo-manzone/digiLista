@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
 import { of, Observable } from 'rxjs';
+import { AdmEventoPage } from '../adm-evento/adm-evento';
+import { InfoEventoPage } from '../info-evento/info-evento';
 
 /**
  * Generated class for the BuscaPage page.
@@ -36,6 +38,9 @@ export class BuscaPage {
     }
     
 
+  voltarPagina(){
+    this.navCtrl.pop();
+  }
 
   onInput(event){
     var q = event.srcElement.value;
@@ -47,7 +52,14 @@ export class BuscaPage {
     this.elemento = this.elemento
         .map(ref => ref.filter((v) => {
             if (v.nome && q) {
-                return v.nome.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+                if(this.user.getTipo() == "user"){
+                  return v.nome.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+                }else{
+                  if(v.criador == this.user.getUsuario()){
+                    return v.nome.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+                  }
+                }
+                
             }
         }));
   }
@@ -56,6 +68,14 @@ export class BuscaPage {
     this.elemento = this.db.getAll(this.pathBusca);
   }
 
-  abrirEvento(event) {}
+  abrirEvento(event) {
+    this.user.setEvento(event.target.innerText);
+    if(this.user.getTipo() == 'agent'){
+      this.navCtrl.push(AdmEventoPage);
+    }else{
+      this.navCtrl.push(InfoEventoPage);
+    }
+    
+  }
 
 }
