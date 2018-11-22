@@ -18,6 +18,7 @@ export class UserProvider {
 
   tipousuario: any;
 
+
   constructor() {
     console.log('Hello UserProvider Provider');
   }

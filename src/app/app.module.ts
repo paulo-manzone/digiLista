@@ -24,6 +24,7 @@ import { AddusuarioPage } from '../pages/addusuario/addusuario';
 import { UserProvider } from '../providers/user/user';
 import { PrincipalAdmPage } from '../pages/principal-adm/principal-adm';
 import { NovoeventoPage } from '../pages/novoevento/novoevento';
+import { HistoricoPage } from '../pages/historico/historico';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NovoeventoPage } from '../pages/novoevento/novoevento';
     CadastroPage,
     AlterarDadosPage,
     PrincipalAdmPage,
-    NovoeventoPage
+    NovoeventoPage,
+    HistoricoPage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ import { NovoeventoPage } from '../pages/novoevento/novoevento';
     CadastroPage,
     AlterarDadosPage,
     PrincipalAdmPage,
-    NovoeventoPage
+    NovoeventoPage,
+    HistoricoPage
   ],
   providers: [
     StatusBar,

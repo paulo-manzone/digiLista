@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
 import { UserProvider } from '../../providers/user/user';
 
@@ -21,7 +21,7 @@ export class InfoEventoPage {
   data:any;
   criador:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public db: DatabaseProvider, public user: UserProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public db: DatabaseProvider, public user: UserProvider, public alertCtrl: AlertController) {
     this.db.getAll('/eventos').subscribe(res => res.map(item => {
       if (item['nome'] == this.user.getEvento()) {
           this.nome = item['nome'];
@@ -38,6 +38,13 @@ export class InfoEventoPage {
 
   cadastrarParticipante(){
     this.db.saveData({nome: this.user.getUsuario(), evento: this.user.getEvento(), participou: false}, "/lista");
+    let alert = this.alertCtrl.create({
+      title: 'Sucesso!',
+      subTitle: 'Cadastrado com sucesso!',
+      buttons: ['Ok']
+    });
+    alert.present();
+    this.navCtrl.pop();
   }
 
 }

@@ -3,6 +3,7 @@ import { AlterarDadosPage } from './../alterar-dados/alterar-dados';
 import { BuscaPage } from './../busca/busca';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HistoricoPage } from '../historico/historico';
 
 /**
  * Generated class for the PrincipalPage page.
@@ -32,6 +33,10 @@ export class PrincipalPage {
   
   goToPageAlterarDados() {
     this.navCtrl.push(AlterarDadosPage);
+  }
+
+  goToPageHistorico(){
+    this.navCtrl.push(HistoricoPage);
   }
 
 }
