@@ -75,6 +75,7 @@ export class DatabaseProvider {
     this.db.list(path, ref => ref.orderByChild('login').equalTo(this.user.getUsuario())).valueChanges()
     .subscribe(res => {
       this.db.list(path).update(res[0]['key'],param);
+      this.remove(res[0]['key']);
     })
   }
 
