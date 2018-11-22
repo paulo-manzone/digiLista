@@ -30,7 +30,6 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Tela Principal', component: PrincipalPage},
-      { title: 'Tela de Busca', component: BuscaPage},
       { title: 'Tela de Evento', component: InfoEventoPage},
       { title: 'Tela de Adm', component: AdmEventoPage},
       { title: 'Tela de Digital', component: FingerprintPage},

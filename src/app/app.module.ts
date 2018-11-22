@@ -1,3 +1,4 @@
+import { AlterarDadosPage } from './../pages/alterar-dados/alterar-dados';
 import { CadastroPage } from './../pages/cadastro/cadastro';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,6 +21,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { DatabaseProvider } from '../providers/database/database';
 import { AddusuarioPage } from '../pages/addusuario/addusuario';
+import { UserProvider } from '../providers/user/user';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { AddusuarioPage } from '../pages/addusuario/addusuario';
     AdmEventoPage,
     FingerprintPage,
     AddusuarioPage,
-    CadastroPage
+    CadastroPage,
+    AlterarDadosPage,
   ],
   imports: [
     BrowserModule,
@@ -59,13 +62,15 @@ import { AddusuarioPage } from '../pages/addusuario/addusuario';
     AdmEventoPage,
     FingerprintPage,
     AddusuarioPage,
-    CadastroPage
+    CadastroPage,
+    AlterarDadosPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatabaseProvider
+    DatabaseProvider,
+    UserProvider
   ]
 })
 export class AppModule {}

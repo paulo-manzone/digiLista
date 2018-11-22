@@ -16,7 +16,7 @@ export class ListPage {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
-    this.items = db.getAll();
+    this.items = db.getAll('/eventos');
   }
 
   itemTapped(event, item) {

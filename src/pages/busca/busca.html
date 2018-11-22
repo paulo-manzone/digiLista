@@ -18,26 +18,23 @@
 
 <ion-content padding>
   <ion-card>
+
       <div class="buscaText">Buscar Evento</div>
       <ion-searchbar
-      [(ngModel)]="myInput"
-      [showCancelButton]="shouldShowCancel"
       (ionInput)="onInput($event)"
       (ionCancel)="onCancel($event)">
-    </ion-searchbar>
+      </ion-searchbar>
+
   </ion-card>
   <ion-card>
-    <ion-grid>
       <ion-list>
-        <ion-item-sliding *ngFor = "let evento of eventos | async">
-          <ion-item (click)="abrirEvento($event, item)">
-            <h3>{{evento.nome}}</h3>
-            <hr>
-          </ion-item>
-        </ion-item-sliding>
-      </ion-list>
-    </ion-grid>
-
+          <ion-item-sliding *ngFor = "let i of elemento | async">
+            <ion-item (click)="abrirEvento($event)">-->
+              <h3>{{i.nome}}</h3>
+              <hr>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-list>
   </ion-card>
   <button ion-button block color="secondary">Voltar</button>
 

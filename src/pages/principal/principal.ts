@@ -1,3 +1,6 @@
+import { UserProvider } from './../../providers/user/user';
+import { AlterarDadosPage } from './../alterar-dados/alterar-dados';
+import { BuscaPage } from './../busca/busca';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +18,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PrincipalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private user: UserProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PrincipalPage');
+  }
+
+  goToPageBusca() {
+    this.user.setPath('/eventos');
+    this.navCtrl.push(BuscaPage);
+  }
+  
+  goToPageAlterarDados() {
+    this.navCtrl.push(AlterarDadosPage);
   }
 
 }

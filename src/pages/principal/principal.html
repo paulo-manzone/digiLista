@@ -6,12 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-    </button>
+
     <ion-title>DigiLista</ion-title>
-  </ion-navbar>
+
 
 </ion-header>
 
@@ -22,12 +19,12 @@
       <ion-grid justify-content-center align-items-center>
           <ion-row>
             <ion-col>
-              <button ion-button icon-only class="btnCustom">
+              <button ion-button icon-only class="btnCustom" (click)="goToPageBusca()">
                 <ion-icon name="list-box"></ion-icon>
               </button>
             </ion-col>
             <ion-col>
-                    <button ion-button icon-only class="btnCustom">
+                    <button ion-button icon-only class="btnCustom" (click)="goToPageBusca()">
                     <ion-icon name="time"></ion-icon>
                 </button>
             </ion-col>
@@ -39,7 +36,7 @@
                   </button>
               </ion-col>
               <ion-col>
-                    <button ion-button icon-only class="btnCustom">
+                    <button ion-button icon-only class="btnCustom" (click)="goToPageAlterarDados()">
                       <ion-icon name="person"></ion-icon>
                   </button>
               </ion-col>

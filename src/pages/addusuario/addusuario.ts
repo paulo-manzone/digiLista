@@ -43,15 +43,7 @@ export class AddusuarioPage {
 
   onSubmit() {
     if (this.form.valid) {
-      this.provider.save(this.form.value)
-        .then(() => {
-          this.toast.create({ message: 'Evento salvo com sucesso.', duration: 3000 }).present();
-          //this.navCtrl.pop();
-        })
-        .catch((e) => {
-          this.toast.create({ message: 'Erro ao salvar o evento.', duration: 3000 }).present();
-          console.error(e);
-        })
+      this.provider.saveData(this.form.value, '/eventos');
     }
   }
 
